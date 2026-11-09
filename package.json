@@ -1,36 +1,14 @@
 {
-  "name": "khattat",
-  "version": "1.0.0",
+  "name": "khattat-monorepo",
   "private": true,
-  "packageManager": "bun@1.3.14",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "lucide-react": "^1.17.0",
-    "next": "16.2.7",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.7",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  },
-  "ignoreScripts": [
-    "sharp",
-    "unrs-resolver"
+  "workspaces": [
+    "apps/*",
+    "packages/*"
   ],
-  "trustedDependencies": [
-    "sharp",
-    "unrs-resolver"
-  ]
+  "scripts": {
+    "web": "bun --filter @khattat/web run dev",
+    "web:build": "bun --filter @khattat/web run build",
+    "web:lint": "bun --filter @khattat/web run lint",
+    "mobile": "bun --filter @khattat/mobile run start"
+  }
 }

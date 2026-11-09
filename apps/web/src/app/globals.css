@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@krpkg/ui/styles.css";
 
 :root {
   --canvas: #f3efe7;
